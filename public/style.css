@@ -1,0 +1,51 @@
+a.back {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+main { margin-top: 20px; }
+.card h2 { text-align:center; }
+
+.day-holder { clear: both; }
+.day { 
+    float: left; 
+    position: relative;
+    width: 60px; 
+    height: 40px;
+    margin-bottom: 5px; 
+    margin-right: 5px; 
+    border: 1px #eee dashed;
+}
+
+a:hover {text-decoration: none;}
+a.activity1 { background-color: #e8f3e8; color:black;}
+a.activity2 { background-color: #c0e4c0; color:black;}
+a.activity3 { background-color: #8dc58d; color: white; }
+a.activity4 { background-color: #5ca55c; color: white; }
+a.activity5 { background-color: #4a8b4a; color: white; }
+a.activity6 { background-color: #297729; color: white; }
+a.activity7 { background-color: #105a10; color: white; }
+a.activity8 { background-color: #034203; color: white; }
+
+.day .label { 
+    font-size: 10px; 
+    padding-left: 10px;
+}
+
+.day .stats { 
+    text-align: center;
+    font-weight: bold;
+}
+
+.msg-content { font-size: 1.5em; }
+
+.my-msg { color: #888888; }
+.someones-msg { color: #222211; }
+
+.row .date {
+    text-align: center;
+    width: 100%;
+    margin-top: -20px;
+    background: #4a8b4a;
+    color:white;
+}

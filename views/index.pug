@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+    link(rel="stylesheet" href="/style.css")
+  body
+    main
+      .container
+        .row
+          each m, mi in months
+            .col-md-4
+              .card.mb-4.shadow-sm
+                h2= m
+                .day-holder
+                  - var day = 1
+                  while day <= dims[mi]
+                    - dtIso = year + '-' + pad2(mi+1) + '-' + pad2(day)
+                    - href = '/dt/' + dtIso
+                    if dailyStats[dtIso]
+                      - var cls = 'activity' + lim8(parseInt(dailyStats[dtIso]))
+                      a.day(class=cls, href=href)
+                        .label= day
+                        .stats= dailyStats[dtIso]
+                    else
+                      a.day(href=href)
+                        .label= day
+                    - day ++

@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    title= pageTitle
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+    link(rel="stylesheet" href="/style.css")
+  body
+    main
+      .container
+        .row
+            a.back(href="/") &lt;&lt; Back
+        - var dtPrev = ""
+        each msg in chats
+          - var cls = msg.displayName ? 'someones-msg' : 'my-msg'
+          - var dtThis = msg.originalarrivaltime.substring(0, 10)
+          if dtThis != dtPrev
+            .row(style="margin-top: 30px; height:5px; background: #ccc")
+                .date= dtThis
+          - dtPrev = dtThis
+          .row(class=cls)
+            .col-md-2= msg.displayName || 'wcrbrm'
+            .col-md-3= msg.originalarrivaltime
+            if msg.content.indexOf("<partlist") === -1
+                .col-md-7.msg-content!= msg.content
+            else 
+                .col-md-7.msg-content - CALL -
